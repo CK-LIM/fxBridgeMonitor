@@ -316,7 +316,7 @@ def main():
     loadContract()
     queryData()
     buildTelebotMsg()
-    sentTeleReport()
+    # sentTeleReport()
 
     print("--- %s seconds ---" % (time.time() - start_time))
     scheduleDailyReport()

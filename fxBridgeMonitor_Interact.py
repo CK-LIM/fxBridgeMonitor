@@ -28,8 +28,8 @@ start_time = time.time()
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
-# TELE_CHAT_ID = os.getenv('TELE_CHAT_ID')
-TELE_CHAT_ID = os.getenv('TELE_TEST_CHAT_ID')
+TELE_CHAT_ID = os.getenv('TELE_CHAT_ID')
+# TELE_CHAT_ID = os.getenv('TELE_TEST_CHAT_ID')
 
 # ######################################################################################
 # Build core function
