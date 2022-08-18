@@ -28,7 +28,8 @@ start_time = time.time()
 
 load_dotenv()
 API_KEY = os.getenv('API_KEY')
-TELE_CHAT_ID = os.getenv('TELE_CHAT_ID')
+# TELE_CHAT_ID = os.getenv('TELE_CHAT_ID')
+TELE_CHAT_ID = os.getenv('TELE_TEST_CHAT_ID')
 
 # ######################################################################################
 # Build core function
@@ -288,7 +289,7 @@ def listenTeleMsg():
     try:
         @bot.message_handler(commands=['data'])
         def echo_all(message):
-            bot.reply_to(message, "Here comes the latest data...")
+            bot.reply_to(message, "Data is loading, please wait for a few sec...")
             dailyReport()
         bot.infinity_polling()
     except Exception as e:
