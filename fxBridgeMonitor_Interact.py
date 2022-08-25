@@ -140,74 +140,74 @@ def buildTelebotMsg():
     if ((fxCoreLockedFx > ethereumFXTSupply)):
         fxResult = "Normal"
         fxDescription = "FxCore_Locked_Fx > Ethereum_FX_T.Supply"
-        fxDiffAmount = fxCoreLockedFx-ethereumFXTSupply
+        fxDiffAmount = abs(fxCoreLockedFx-ethereumFXTSupply)
     elif fxCoreLockedFx < ethereumFXTSupply:
         fxResult = "Warning"
         fxDescription = "FxCore_Locked_Fx < Ethereum_FX_T.Supply"
-        fxDiffAmount = fxCoreLockedFx - ethereumFXTSupply
+        fxDiffAmount = abs(fxCoreLockedFx - ethereumFXTSupply)
     else:
         fxResult = "Normal"
         fxDescription = "Both side Equal"
-        fxDiffAmount = fxCoreLockedFx - ethereumFXTSupply
+        fxDiffAmount = abs(fxCoreLockedFx - ethereumFXTSupply)
 
     # PundiX token
     if ((ethereumLockedPundiX > fxCorePundiXSupply)):
         pundixResult = "Normal"
         pundixDescription = "Ethereum_Locked_PundiX > FxCore_PundiX_T.Supply"
-        pundixDiffAmount = ethereumLockedPundiX-fxCorePundiXSupply
+        pundixDiffAmount = abs(ethereumLockedPundiX-fxCorePundiXSupply)
     elif ethereumLockedPundiX < fxCorePundiXSupply:
         pundixResult = "Warning"
         pundixDescription = "Ethereum_Locked_PundiX < FxCore_PundiX_T.Supply"
-        pundixDiffAmount = ethereumLockedPundiX-fxCorePundiXSupply
+        pundixDiffAmount = abs(ethereumLockedPundiX-fxCorePundiXSupply)
     else:
         pundixResult = "Normal"
         pundixDescription = "Both side Equal"
-        pundixDiffAmount = ethereumLockedPundiX-fxCorePundiXSupply
+        pundixDiffAmount = abs(ethereumLockedPundiX-fxCorePundiXSupply)
 
     # Polygon_USDT token
     if ((polygonLockedUSDT > fxCorePolyUSDTSupply)):
         polyUSDTResult = "Normal"
         polyUSDTDescription = "Polygon_Locked_USDT > FxCore_USDT_T.Supply"
-        polyUSDTDiffAmount = polygonLockedUSDT-fxCorePolyUSDTSupply
+        polyUSDTDiffAmount = abs(polygonLockedUSDT-fxCorePolyUSDTSupply)
     elif polygonLockedUSDT < fxCorePolyUSDTSupply:
         polyUSDTResult = "Warning"
         polyUSDTDescription = "Polygon_Locked_USDT < FxCore_USDT_T.Supply"
-        polyUSDTDiffAmount = polygonLockedUSDT-fxCorePolyUSDTSupply
+        polyUSDTDiffAmount = abs(polygonLockedUSDT-fxCorePolyUSDTSupply)
     else:
         polyUSDTResult = "Normal"
         polyUSDTDescription = "Both side Equal"
-        polyUSDTDiffAmount = polygonLockedUSDT-fxCorePolyUSDTSupply
+        polyUSDTDiffAmount = abs(polygonLockedUSDT-fxCorePolyUSDTSupply)
 
     # Tron_USDT token
     if ((tronLockedUSDT > fxCoreTronUSDTSupply)):
         tronUSDTResult = "Normal"
         tronUSDTDescription = "Tron_Locked_USDT > Tron_USDT_T.Supply"
-        tronUSDTDiffAmount = tronLockedUSDT-fxCoreTronUSDTSupply
+        tronUSDTDiffAmount = abs(tronLockedUSDT-fxCoreTronUSDTSupply)
     elif tronLockedUSDT < fxCoreTronUSDTSupply:
         tronUSDTResult = "Warning"
         tronUSDTDescription = "Tron_Locked_USDT < Tron_USDT_T.Supply"
-        tronUSDTDiffAmount = tronLockedUSDT-fxCoreTronUSDTSupply
+        tronUSDTDiffAmount = abs(tronLockedUSDT-fxCoreTronUSDTSupply)
     else:
         tronUSDTResult = "Normal"
         tronUSDTDescription = "Both side Equal"
-        tronUSDTDiffAmount = tronLockedUSDT-fxCoreTronUSDTSupply
+        tronUSDTDiffAmount = abs(tronLockedUSDT-fxCoreTronUSDTSupply)
 
     # Ethereum_USDT token
     if ((ethereumLockedUSDT > fxCoreEthereumUSDTSupply)):
         ethereumUSDTResult = "Normal"
         ethereumUSDTDescription = "Ethereum_Locked_USDT > Ethereum_USDT_T.Supply"
-        ethereumUSDTDiffAmount = ethereumLockedUSDT-fxCoreEthereumUSDTSupply
+        ethereumUSDTDiffAmount = abs(ethereumLockedUSDT-fxCoreEthereumUSDTSupply)
     elif ethereumLockedUSDT < fxCoreEthereumUSDTSupply:
         ethereumUSDTResult = "Warning"
         ethereumUSDTDescription = "Ethereum_Locked_USDT < Ethereum_USDT_T.Supply"
-        ethereumUSDTDiffAmount = ethereumLockedUSDT-fxCoreEthereumUSDTSupply
+        ethereumUSDTDiffAmount = abs(ethereumLockedUSDT-fxCoreEthereumUSDTSupply)
     else:
         ethereumUSDTResult = "Normal"
         ethereumUSDTDescription = "Both side Equal"
-        ethereumUSDTDiffAmount = ethereumLockedUSDT-fxCoreEthereumUSDTSupply
+        ethereumUSDTDiffAmount = abs(ethereumLockedUSDT-fxCoreEthereumUSDTSupply)
 
     #### Build result msg ####
-    if pundixResult == 'Normal' or fxResult == 'Normal' or polyUSDTResult == 'Normal' or tronUSDTResult == 'Normal' or ethereumUSDTResult == 'Normal':
+    if pundixResult == 'Normal' and fxResult == 'Normal' and polyUSDTResult == 'Normal' and tronUSDTResult == 'Normal' and ethereumUSDTResult == 'Normal':
         overallResult = "All Normal"
     else:
         overallResult = "Warning"
